@@ -1,0 +1,306 @@
+.registerContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fcfcfd;
+  position: relative;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif;
+  perspective: 900px;
+  perspective-origin: center;
+  z-index: 0;
+}
+
+.cubeScene {
+  position: absolute;
+  inset: 0;
+  perspective: 600px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.cubeWrapper {
+  position: absolute;
+  top: -100px;
+  width: 30px;
+  height: 30px;
+  perspective: 600px;
+  animation: cubeFall linear infinite;
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: spinCube 4s linear infinite;
+}
+
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ff7a18, #ffb347);
+  border: 1px solid #ff7a18;
+  box-shadow: 0 0 10px rgba(255, 122, 24, 0.8);
+}
+
+/* Faces positioning */
+.front {
+  transform: rotateY(0deg) translateZ(15px);
+}
+.back {
+  transform: rotateY(180deg) translateZ(15px);
+}
+.left {
+  transform: rotateY(-90deg) translateZ(15px);
+}
+.right {
+  transform: rotateY(90deg) translateZ(15px);
+}
+.top {
+  transform: rotateX(90deg) translateZ(15px);
+}
+.bottom {
+  transform: rotateX(-90deg) translateZ(15px);
+}
+
+/* Cube falling animation */
+@keyframes cubeFall {
+  0% {
+    transform: translateY(-150px);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(120vh);
+    opacity: 0;
+  }
+}
+
+/* Cube spin animation */
+@keyframes spinCube {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+/* BLOBS */
+.blobOne,
+.blobTwo {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 0;
+  opacity: 0.6;
+}
+
+.blobOne {
+  background: #fff0e6;
+  top: -100px;
+  left: -100px;
+  animation: floatBlob 15s infinite alternate ease-in-out;
+}
+
+.blobTwo {
+  background: #eef2ff;
+  bottom: -100px;
+  right: -100px;
+  animation: floatBlob 20s infinite alternate-reverse ease-in-out;
+}
+
+@keyframes floatBlob {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(40px, 40px) scale(1.1);
+  }
+}
+
+/* CARD */
+.registerCard {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  border-radius: 32px;
+  padding: 3rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.02), 0 25px 50px -12px rgba(0, 0, 0, 0.04);
+  z-index: 10;
+  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+/* HEADER */
+.logoSection {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.iconBox {
+  width: 56px;
+  height: 56px;
+  background: #fff7ed;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  box-shadow: 0 8px 16px -4px rgba(255, 122, 24, 0.15);
+}
+
+.logoIcon {
+  font-size: 1.5rem;
+  color: #ff7a18;
+}
+
+.registerTitle {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.registerSubtitle {
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+/* FORM */
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.inputField {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+  transition: all 0.2s;
+  outline: none;
+}
+
+.inputField:focus {
+  border-color: #ff7a18;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(255, 122, 24, 0.08);
+}
+
+/* BUTTON */
+.registerBtn {
+  background: #ff7a18;
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.registerBtn:hover {
+  background: #e76a00;
+  transform: translateY(-1px);
+}
+
+/* DIVIDER */
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+  font-size: 0.8rem;
+  color: #cbd5e1;
+  text-transform: uppercase;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #f1f5f9;
+}
+
+.divider span {
+  padding: 0 1rem;
+}
+
+/* SOCIAL */
+.socialRow {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.socialBtn {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  padding: 0.75rem;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.socialBtn:hover {
+  background: #f8fafc;
+}
+
+.socialBtn img {
+  width: 20px;
+  height: 20px;
+}
+
+.appleIcon {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* FOOTER */
+.signupText {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.link {
+  color: #ff7a18;
+  font-weight: 700;
+  cursor: pointer;
+}

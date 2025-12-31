@@ -1,0 +1,239 @@
+:root {
+  --orange-primary: #ff6b00;
+  --orange-hover: #e65a00;
+  --bg-white: #ffffff;
+  --border-color: #f0f0f0;
+  --text-dark: #111827;
+  --text-light: #6b7280;
+}
+
+.dashboardLayout {
+  display: flex;
+  /* min-height: 100vh; */
+  background-color: #ffffff;
+  position: relative;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-dark);
+}
+
+/* Background Grid Pattern - Fixed on Full Screen */
+.gridBackground {
+  position: fixed;
+  inset: 0;
+  background-size: 50px 50px;
+  background-image: linear-gradient(to right, rgba(255, 107, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 107, 0, 0.04) 1px, transparent 1px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  border-right: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 40px;
+}
+.logo span {
+  color: var(--orange-primary);
+}
+
+.sideNav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.navGroup {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #aaa;
+  margin: 15px 0 5px;
+}
+
+.sideBtn {
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.activeSide {
+  background: var(--orange-primary);
+  color: white;
+}
+
+/* Main Wrapper */
+.mainWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  z-index: 5;
+  position: relative;
+}
+
+.topBar {
+  padding: 30px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topBar h1 {
+  font-size: 28px;
+  margin: 0;
+}
+.topBar p {
+  color: var(--text-light);
+  margin: 5px 0 0;
+}
+
+.search {
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: 1px solid var(--border-color);
+  width: 250px;
+  outline: none;
+}
+
+/* Tabs */
+.tabNav {
+  padding: 0 50px;
+  display: flex;
+  gap: 30px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tab {
+  padding: 15px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-light);
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+}
+
+.activeTab {
+  color: var(--orange-primary);
+  border-bottom-color: var(--orange-primary);
+}
+
+/* Content Area */
+.pageBody {
+  padding: 40px 50px;
+  max-width: 1000px;
+}
+
+.settingsSection {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.sectionInfo h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.sectionInfo p {
+  color: var(--text-light);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.formFields {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.inputBox {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.inputBox label {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.inputGroup,
+.phoneWrapper {
+  display: flex;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background: white;
+  overflow: hidden;
+}
+
+.prefix,
+.flag {
+  background: #f9fafb;
+  padding: 12px 15px;
+  border-right: 1px solid var(--border-color);
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+.inputGroup input,
+.phoneWrapper input {
+  flex: 1;
+  border: none;
+  padding: 12px;
+  outline: none;
+  font-size: 14px;
+}
+
+/* textarea {
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+} */
+.hint {
+  font-size: 12px;
+  color: #9ca3af;
+  margin-top: 5px;
+}
+
+/* Sticky Footer for Actions */
+.stickyFooter {
+  position: sticky;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px 0;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  gap: 15px;
+  backdrop-filter: blur(10px);
+}
+
+.btnPrimary {
+  background: var(--orange-primary);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btnSecondary {
+  background: white;
+  border: 1px solid var(--border-color);
+  padding: 12px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+}

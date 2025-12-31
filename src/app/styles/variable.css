@@ -1,0 +1,58 @@
+:root {
+  /* --- PRIMITIVES: The raw color palette --- */
+
+  /* Orange Scale (Warm, Energetic) */
+  --scale-orange-50: #fff7ed; /* Very faint background */
+  --scale-orange-100: #ffedd5; /* Light background */
+  --scale-orange-200: #fed7aa; /* Borders / Accents */
+  --scale-orange-300: #fdba74; /* UI Elements */
+  --scale-orange-400: #fb923c; /* Focus rings */
+  --scale-orange-500: #ff7a18; /* PRIMARY BASE (Your Color) */
+  --scale-orange-600: #ea580c; /* Hover state */
+  --scale-orange-700: #c2410c; /* Active state / Text */
+  --scale-orange-800: #9a3412; /* Deep Text */
+  --scale-orange-900: #7c2d12; /* Darkest Text */
+
+  /* Slate Scale (Cool Neutrals to contrast warm Orange) */
+  --scale-slate-50: #f8fafc;
+  --scale-slate-100: #f1f5f9;
+  --scale-slate-200: #e2e8f0;
+  --scale-slate-300: #cbd5e1;
+  --scale-slate-400: #94a3b8;
+  --scale-slate-500: #64748b; /* Muted Text */
+  --scale-slate-600: #475569;
+  --scale-slate-700: #334155;
+  --scale-slate-800: #1e293b; /* Secondary Text */
+  --scale-slate-900: #0f172a; /* Primary Text (High Contrast) */
+
+  /* --- SEMANTIC: Functional usage of colors --- */
+
+  /* Core Brand */
+  --orange: var(--scale-orange-500);
+  --orange-hover: var(--scale-orange-600);
+  --orange-active: var(--scale-orange-700);
+  --orange-light: var(--scale-orange-50);
+  --orange-subtle: var(--scale-orange-100);
+
+  /* Backgrounds & Surfaces */
+  --bg: #ffffff;
+  --bg-subtle: var(--scale-slate-50);
+  --card: #ffffff;
+  --card-hover: var(--scale-slate-50);
+
+  /* Borders */
+  --border: var(--scale-slate-200);
+  --border-hover: var(--scale-slate-300);
+  --border-focus: var(--scale-orange-300);
+
+  /* Typography */
+  --text: var(--scale-slate-900); /* Darkest Slate for max contrast */
+  --text-secondary: var(--scale-slate-700);
+  --text-muted: var(--scale-slate-500);
+  --text-inverse: #ffffff; /* White text on orange buttons */
+
+  /* Status/Feedback (Harmonized with Orange) */
+  --success: #10b981; /* Emerald Green */
+  --error: #ef4444; /* Red */
+  --info: #3b82f6; /* Blue */
+}

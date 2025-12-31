@@ -1,0 +1,128 @@
+.statCardContainer {
+  position: relative;
+  min-width: 220px;
+  padding: 2px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.statCardGlow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255, 122, 24, 0.15) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.statCardInner {
+  position: relative;
+  z-index: 1;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 18px;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.statCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.iconBox {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff7ed;
+  color: #ff7a18;
+  border-radius: 12px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.trendIndicator {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #16a34a;
+  background: #f0fdf4;
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.statTitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0 0 6px 0;
+}
+
+.statValue {
+  color: #1e293b;
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -0.02em;
+  transition: color 0.3s ease;
+}
+
+.statCardFooter {
+  margin-top: 18px;
+}
+
+.statProgressBg {
+  height: 6px;
+  background: #f1f5f9;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.statProgressFill {
+  height: 100%;
+  width: 70%;
+  background: linear-gradient(90deg, #ff7a18, #fbbf24);
+  border-radius: 10px;
+  transition: width 1s ease-in-out;
+}
+
+.statSubtext {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+/* Hover effects */
+.statCardContainer:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.statCardContainer:hover .statCardInner {
+  border-color: rgba(255, 122, 24, 0.3);
+}
+
+.statCardContainer:hover .statCardGlow {
+  opacity: 1;
+}
+
+.statCardContainer:hover .iconBox {
+  transform: rotate(-10deg) scale(1.1);
+  background: #ff7a18;
+  color: #ffffff;
+}
+
+.statCardContainer:hover .statValue {
+  color: #ff7a18;
+}
